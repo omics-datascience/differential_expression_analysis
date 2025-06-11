@@ -1,0 +1,151 @@
+molecularProfileId	molecularAlterationType	datatype	name	description	studyId
+hnsc_tcga_pub_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	hnsc_tcga_pub
+alal_target_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	alal_target_gdc
+alal_target_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	alal_target_gdc
+aml_target_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	aml_target_gdc
+aml_target_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	aml_target_gdc
+bll_target_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	bll_target_gdc
+bll_target_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	bll_target_gdc
+nbl_target_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	nbl_target_gdc
+nbl_target_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	nbl_target_gdc
+os_target_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	os_target_gdc
+os_target_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	os_target_gdc
+wt_target_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	wt_target_gdc
+wt_target_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	wt_target_gdc
+skcm_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	skcm_tcga
+acc_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	acc_tcga_gdc
+acc_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	acc_tcga_gdc
+blca_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	blca_tcga_gdc
+blca_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	blca_tcga_gdc
+brca_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	brca_tcga_gdc
+brca_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	brca_tcga_gdc
+cesc_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	cesc_tcga_gdc
+cesc_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	cesc_tcga_gdc
+chol_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	chol_tcga_gdc
+chol_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	chol_tcga_gdc
+dlbclnos_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	dlbclnos_tcga_gdc
+dlbclnos_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	dlbclnos_tcga_gdc
+esca_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	esca_tcga_gdc
+esca_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	esca_tcga_gdc
+gbm_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	gbm_tcga_gdc
+gbm_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	gbm_tcga_gdc
+hnsc_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	hnsc_tcga_gdc
+hnsc_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	hnsc_tcga_gdc
+chrcc_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	chrcc_tcga_gdc
+chrcc_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	chrcc_tcga_gdc
+ccrcc_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	ccrcc_tcga_gdc
+ccrcc_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	ccrcc_tcga_gdc
+prcc_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	prcc_tcga_gdc
+prcc_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	prcc_tcga_gdc
+aml_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	aml_tcga_gdc
+aml_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	aml_tcga_gdc
+difg_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	difg_tcga_gdc
+difg_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	difg_tcga_gdc
+hcc_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	hcc_tcga_gdc
+hcc_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	hcc_tcga_gdc
+luad_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	luad_tcga_gdc
+luad_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	luad_tcga_gdc
+lusc_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	lusc_tcga_gdc
+lusc_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	lusc_tcga_gdc
+plmeso_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	plmeso_tcga_gdc
+plmeso_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	plmeso_tcga_gdc
+hgsoc_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	hgsoc_tcga_gdc
+hgsoc_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	hgsoc_tcga_gdc
+paad_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	paad_tcga_gdc
+paad_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	paad_tcga_gdc
+mnet_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	mnet_tcga_gdc
+mnet_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	mnet_tcga_gdc
+prad_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	prad_tcga_gdc
+prad_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	prad_tcga_gdc
+read_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	read_tcga_gdc
+read_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	read_tcga_gdc
+soft_tissue_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	soft_tissue_tcga_gdc
+soft_tissue_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	soft_tissue_tcga_gdc
+skcm_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	skcm_tcga_gdc
+skcm_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	skcm_tcga_gdc
+stad_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	stad_tcga_gdc
+stad_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	stad_tcga_gdc
+nsgct_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	nsgct_tcga_gdc
+nsgct_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	nsgct_tcga_gdc
+thpa_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	thpa_tcga_gdc
+thpa_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	thpa_tcga_gdc
+thym_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	thym_tcga_gdc
+thym_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	thym_tcga_gdc
+ucec_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	ucec_tcga_gdc
+ucec_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	ucec_tcga_gdc
+ucs_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	ucs_tcga_gdc
+ucs_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	ucs_tcga_gdc
+um_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	um_tcga_gdc
+um_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	um_tcga_gdc
+brain_cptac_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	brain_cptac_gdc
+brain_cptac_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	brain_cptac_gdc
+breast_cptac_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	breast_cptac_gdc
+breast_cptac_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	breast_cptac_gdc
+coad_cptac_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	coad_cptac_gdc
+coad_cptac_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	coad_cptac_gdc
+luad_cptac_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	luad_cptac_gdc
+luad_cptac_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	luad_cptac_gdc
+lusc_cptac_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	lusc_cptac_gdc
+lusc_cptac_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	lusc_cptac_gdc
+ohnca_cptac_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	ohnca_cptac_gdc
+ohnca_cptac_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	ohnca_cptac_gdc
+ovary_cptac_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	ovary_cptac_gdc
+ovary_cptac_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	ovary_cptac_gdc
+pancreas_cptac_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	pancreas_cptac_gdc
+pancreas_cptac_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	pancreas_cptac_gdc
+rcc_cptac_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	rcc_cptac_gdc
+rcc_cptac_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	rcc_cptac_gdc
+uec_cptac_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	uec_cptac_gdc
+uec_cptac_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	uec_cptac_gdc
+coad_tcga_gdc_mrna_seq_tpm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (TPM)	mRNA expression from capture (RNA Seq TPM)	coad_tcga_gdc
+coad_tcga_gdc_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM)	coad_tcga_gdc
+kirp_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	kirp_tcga
+acc_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	acc_tcga
+blca_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	blca_tcga
+blca_tcga_pub_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	blca_tcga_pub
+blca_tcga_pub_2017_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	blca_tcga_pub_2017
+blca_msk_tcga_2020_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	blca_msk_tcga_2020
+brca_mbcproject_2022_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	brca_mbcproject_2022
+brca_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	brca_tcga
+cesc_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	cesc_tcga
+chol_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	chol_tcga
+brca_tcga_pub2015_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	brca_tcga_pub2015
+brca_mbcproject_wagle_2017_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	brca_mbcproject_wagle_2017
+coadread_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	coadread_tcga
+dlbc_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	dlbc_tcga
+esca_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	esca_tcga
+gbm_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	gbm_tcga
+gbm_tcga_pub2013_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	gbm_tcga_pub2013
+kirc_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	kirc_tcga
+kich_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	kich_tcga
+hnsc_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	hnsc_tcga
+kirc_tcga_pub_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	kirc_tcga_pub
+kich_tcga_pub_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	kich_tcga_pub
+laml_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	laml_tcga
+lgg_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	lgg_tcga
+lihc_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	lihc_tcga
+luad_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	luad_tcga
+laml_tcga_pub_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	laml_tcga_pub
+lusc_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	lusc_tcga
+meso_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	meso_tcga
+luad_tcga_pub_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	luad_tcga_pub
+mel_tsam_liang_2017_rna_seq_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	Expression levels.	mel_tsam_liang_2017
+ov_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	ov_tcga
+paad_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	paad_tcga
+pcpg_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	pcpg_tcga
+prad_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	prad_tcga
+prad_tcga_pub_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	prad_tcga_pub
+prad_eururol_2017_rna_seq_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression from capture (RNA Seq FPKM).	prad_eururol_2017
+prad_msk_mdanderson_2023_mrna_seq_fpkm	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (FPKM)	mRNA expression (RNA Seq FPKM)	prad_msk_mdanderson_2023
+sarc_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	sarc_tcga
+stad_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	stad_tcga
+tgct_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	tgct_tcga
+thym_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	thym_tcga
+thca_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	thca_tcga
+ucec_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	ucec_tcga
+ucs_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	ucs_tcga
+uvm_tcga_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	uvm_tcga
+stad_tcga_pub_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	stad_tcga_pub
+thca_tcga_pub_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	thca_tcga_pub
+ucec_tcga_pub_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	mRNA gene expression (RNA Seq V2 RSEM)	ucec_tcga_pub
+sarc_tcga_pub_rna_seq_v2_mrna	MRNA_EXPRESSION	CONTINUOUS	mRNA expression (RNA Seq V2 RSEM)	Expression levels for 20532 genes in 264 soft_tissue cases (RNA Seq V2 RSEM).	sarc_tcga_pub

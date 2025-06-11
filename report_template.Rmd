@@ -1,0 +1,37 @@
+---
+title: "Informe de Resultados"
+output: html_document
+params:
+  dataset: NULL
+  atributo: NULL
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+dataset <- params$dataset
+atributo <- params$atributo
+archivo_tabla <- file.path("output", paste0(dataset, "_", atributo, "_top50_results.csv"))
+archivo_imagen <- file.path("output", paste0(dataset, "_", atributo, "_volcano_plot.png"))
+```
+
+## Tabla de Resultados
+
+```{r tabla, echo=FALSE}
+if (file.exists(archivo_tabla)) {
+  tabla <- read.csv(archivo_tabla, stringsAsFactors = FALSE)
+  tabla[] <- lapply(tabla, function(x) if(is.numeric(x)) formatC(x, format = "e", digits = 4) else x)
+  knitr::kable(tabla)
+} else {
+  cat("Archivo de resultados no encontrado.")
+}
+```
+
+## Gráfico Volcano Plot
+
+```{r imagen, echo=FALSE}
+if (file.exists(archivo_imagen)) {
+  knitr::include_graphics(archivo_imagen)
+} else {
+  cat("Imagen no disponible.")
+}
+```
