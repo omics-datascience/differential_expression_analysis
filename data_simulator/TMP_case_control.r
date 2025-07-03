@@ -3,7 +3,7 @@ simular_tpm_case_control<- function(
   n_muestras = 60,
   n_deg = 50,
   cambio_esperado = 2.5,
-  ruido_sd = 2,
+  ruido_sd = 3,
   semilla = 42
 ) {
   #' Simula un dataset sintético de expresión génica en TPM para análisis diferencial.
@@ -46,7 +46,14 @@ simular_tpm_case_control<- function(
   grupos <- c(rep("control", floor(n_muestras / 2)), rep("caso", ceiling(n_muestras / 2)))
 
   # Simulación base: distribución exponencial para TPM
-  tpm_base <- matrix(rexp(n_genes * n_muestras, rate = 1/20), nrow = n_genes, ncol = n_muestras)
+  # Exponencial con media 30
+  rate = 1/30
+  tpm_base <- matrix(rexp(n_genes * n_muestras, rate = rate),
+                    nrow = n_genes, ncol = n_muestras)
+
+  # Variabilidad entre individuos (biología real)
+  efecto_biologico <- rnorm(n_muestras, 0, 3)
+  tpm_base <- sweep(tpm_base, 2, efecto_biologico, "+")
 
   # Seleccionar genes diferencialmente expresados
   indices_deg <- sample(n_genes, n_deg, replace = FALSE)
@@ -57,7 +64,7 @@ simular_tpm_case_control<- function(
   # Aplicar fold change a genes DE en grupo caso
   tpm_base[indices_deg, indices_caso] <- tpm_base[indices_deg, indices_caso] * cambio_esperado
 
-  # Añadir ruido normal aditivo
+  # Añadir ruido normal aditivo (Variabilidad de medición (secuenciación, RSEM))
   ruido <- matrix(rnorm(n_genes * n_muestras, mean = 0, sd = ruido_sd), nrow = n_genes, ncol = n_muestras)
   tpm_base <- tpm_base + ruido
 

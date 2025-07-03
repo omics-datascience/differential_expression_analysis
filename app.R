@@ -38,17 +38,41 @@ ui <- fluidPage(
 server <- function(input, output, session) {
   datasets_dir <- "datasets"
   
-    observe({
-    carpetas <- list.dirs(datasets_dir, full.names = FALSE, recursive = FALSE)
+    # observe({
+    # carpetas <- list.dirs(datasets_dir, full.names = FALSE, recursive = FALSE)
 
-    # Filtrar solo las que contienen el archivo data_mrna_seq_v2_rsem.txt
-    carpetas_validas <- Filter(function(carpeta) {
+    # # Filtrar solo las que contienen el archivo data_mrna_seq_v2_rsem.txt
+    # carpetas_validas <- Filter(function(carpeta) {
+    #     archivo_expr <- file.path(datasets_dir, carpeta, "data_mrna_seq_v2_rsem.txt")
+    #     file.exists(archivo_expr)
+    # }, carpetas)
+
+    # updateSelectInput(session, "dataset", choices = carpetas_validas)
+    # })
+
+    observe({
+      carpetas <- list.dirs(datasets_dir, full.names = FALSE, recursive = FALSE)
+      
+      # Función para calcular tamaño total de una carpeta (en bytes)
+      tamano_carpeta <- function(carpeta) {
+        ruta_carpeta <- file.path(datasets_dir, carpeta)
+        archivos <- list.files(ruta_carpeta, recursive = TRUE, full.names = TRUE)
+        if (length(archivos) == 0) return(0)
+        sum(file.info(archivos)$size, na.rm = TRUE)
+      }
+      
+      # Filtrar carpetas que contienen el archivo requerido
+      carpetas_validas <- Filter(function(carpeta) {
         archivo_expr <- file.path(datasets_dir, carpeta, "data_mrna_seq_v2_rsem.txt")
         file.exists(archivo_expr)
-    }, carpetas)
-
-    updateSelectInput(session, "dataset", choices = carpetas_validas)
-    })
+      }, carpetas)
+      
+      # Calcular tamaño y ordenar carpetas válidas por tamaño descendente
+      tamanos <- sapply(carpetas_validas, tamano_carpeta)
+      carpetas_ordenadas <- carpetas_validas[order(tamanos, decreasing = TRUE)]
+      
+      updateSelectInput(session, "dataset", choices = carpetas_ordenadas)
+  })
   
   observeEvent(input$dataset, {
     req(input$dataset)
@@ -69,7 +93,7 @@ server <- function(input, output, session) {
 
     archivo <- file.path(datasets_dir, input$dataset, "data_clinical_patient.txt")
     if (!file.exists(archivo)) {
-      return(data.frame(Mensaje = "❌ Archivo no encontrado."))
+      return(data.frame(Mensaje = "Archivo no encontrado."))
     }
 
     header_line <- readLines(archivo, n = 5)[5]
@@ -79,7 +103,7 @@ server <- function(input, output, session) {
     colnames(datos) <- header
 
     if (!(input$atributo %in% colnames(datos))) {
-      return(data.frame(Mensaje = paste("⚠️ Atributo", input$atributo, "no encontrado.")))
+      return(data.frame(Mensaje = paste("Atributo", input$atributo, "no encontrado.")))
     }
 
     # Obtener frecuencias y porcentajes

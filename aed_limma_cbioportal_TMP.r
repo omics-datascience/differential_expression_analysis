@@ -43,32 +43,33 @@ log_data_filtered <- filter_lowly_expressed_genes(log_data)
 log_data_filtered <- filter_genes_by_variance(log_data_filtered)
 
 # Create plots after filtering
-create_plots_for_expresion_data(rnaseq_tpm_data, log_data, log_data_filtered, paste0("output/", dataset, "_", atributo, "_plots.pdf"))
+# create_plots_for_expresion_data(rnaseq_tpm_data, log_data, log_data_filtered, paste0("output/", dataset, "_", atributo, "_plots.pdf"))
 
 # Perform differential expression analysis
+cat("Number of genes used for the analysis:", nrow(log_data_filtered), "\n")
+cat("Number of samples used for the analysis:", nrow(metadata), "\n")
 all_results <- perform_differential_expression(log_data_filtered, metadata, atributo)
 
+# ##### Process results #####
+# source("process_results/process_limma_results.r")
+# # print(colnames(all_results))
+# ordered_results_pvalue <- order_results_by_pvalue(all_results)
+# # ordered_results_logFC <- order_results_by_logFC(all_results)
+# # ordered_results_both <- order_results_by_both(all_results)
 
-##### Process results #####
-source("process_results/process_limma_results.r")
+# # Get the top 50 results by adjusted p-value
+# top_50_pvalue <- get_top_50_by_pvalue(ordered_results_pvalue)
 
-ordered_results_pvalue <- order_results_by_pvalue(all_results)
-# ordered_results_logFC <- order_results_by_logFC(all_results)
-# ordered_results_both <- order_results_by_both(all_results)
-
-# Get the top 50 results by adjusted p-value
-top_50_pvalue <- get_top_50_by_pvalue(ordered_results_pvalue)
-
-# Write the results to CSV files
-write.csv(ordered_results_pvalue, file = paste0("output/", dataset, "_", atributo, "_results.csv"), row.names = TRUE)
-write.csv(top_50_pvalue, file = paste0("output/", dataset, "_", atributo, "_top50_results.csv"), row.names = TRUE)
+# # Write the results to CSV files
+# write.csv(ordered_results_pvalue, file = paste0("output/", dataset, "_", atributo, "_results.csv"), row.names = TRUE)
+# write.csv(top_50_pvalue, file = paste0("output/", dataset, "_", atributo, "_top50_results.csv"), row.names = TRUE)
 
 
-# Creo y guardo grafico de volcano
-results_plot <- create_volcano_plot(ordered_results_pvalue,
-       p_value_threshold = 0.05,
-       logFC_threshold = 1,
-       title = paste0(dataset, ":", dataset, "Diff_Expression_By", atributo))
+# # Creo y guardo grafico de volcano
+# results_plot <- create_volcano_plot(ordered_results_pvalue,
+#        p_value_threshold = 0.05,
+#        logFC_threshold = 1,
+#        title = paste0(dataset, ":", dataset, "Diff_Expression_By", atributo))
 
-ggsave(filename = paste0("output/", dataset, "_", atributo, "_volcano_plot.png"),
-       plot = results_plot, width = 10, height = 7)
+# ggsave(filename = paste0("output/", dataset, "_", atributo, "_volcano_plot.png"),
+#        plot = results_plot, width = 10, height = 7)

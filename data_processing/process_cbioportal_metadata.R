@@ -4,8 +4,8 @@ process_cbioportal_metadata <- function(clinical_path, sample_path, clinical_att
   cat("Loading cBioPortal metadata dataset...", "\n")
 
   # Load files
-  clinical_data <- read.table(clinical_path, header = TRUE, skip = 4, sep = "\t", check.names = FALSE)
-  sample_data <- read.table(sample_path, header = TRUE, skip = 4, sep = "\t", check.names = FALSE)
+  clinical_data <- read.table(clinical_path, header = TRUE, skip = 4, sep = "\t", check.names = FALSE, quote = "", fill = TRUE)
+  sample_data <- read.table(sample_path, header = TRUE, skip = 4, sep = "\t", check.names = FALSE, quote = "", fill = TRUE)
   ##### Process clinical data #####
   clinical_data <- clinical_data[, c("PATIENT_ID", clinical_attribute)]
   # Eliminar filas con NA en el atributo clínico

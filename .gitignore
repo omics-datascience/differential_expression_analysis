@@ -5,3 +5,4 @@ data_simulator/output/*
 data_simulator/datasets/*
 limma_results*
 .vscode/settings.json
+Rplots.pdf

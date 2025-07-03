@@ -2,7 +2,7 @@ process_rnaseq_tpm_data <- function(rnaseq_path, metadata) {
   cat("Loading RNA-Seq TPM dataset...", "\n")
   
   # Load RNASeq data
-  rnaseq_tpm_data <- read.table(rnaseq_path, header = TRUE, sep = "\t")
+  rnaseq_tpm_data <- read.table(rnaseq_path, header = TRUE, sep = "\t", quote = "", fill = TRUE)
 
   # Identify and remove duplicate Hugo_Symbols
   duplicates <- rnaseq_tpm_data %>% 

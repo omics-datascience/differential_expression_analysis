@@ -1,22 +1,19 @@
 ##### Function to verify and install packages #####
-Sys.getenv("R_LIBS_USER")
-Sys.getenv("R_LIBS")
 
-if (!require(BiocManager, quietly = TRUE)) {
-  install.packages(BiocManager)
-}
-
-BiocManager::install(version = "3.20", ask = FALSE)
+# if (!require("BiocManager", quietly = TRUE)) {
+#   install.packages("BiocManager")
+#   BiocManager::install(version = "3.20", ask = FALSE)
+# }
 
 check_and_install_with_bc <- function(package) {
-  if (!require(package, quietly = TRUE)) {
+  if (!require(package, character.only = TRUE, quietly = TRUE)) {
     BiocManager::install(package)
   }
 }
 
-check_and_install_cran <- function(paquete) {
-  if (!requireNamespace(paquete, quietly = TRUE)) {
-    install.packages(paquete, dependencies = TRUE)
+check_and_install_cran <- function(package) {
+  if (!requireNamespace(package, quietly = TRUE)) {
+    install.packages(package, dependencies = TRUE)
   }
 }
 
@@ -35,11 +32,13 @@ check_and_install_cran("reshape2")
 check_and_install_cran("gridExtra")
 check_and_install_cran("pROC")
 
-library(limma)
-library(edgeR)
-library(dplyr)
-library(matrixStats)
-library(ggplot2)
-library(ggrepel)
-library(reshape2)
-library(gridExtra)
+# Load libraries once installed
+suppressPackageStartupMessages(library(limma))
+suppressPackageStartupMessages(library(edgeR))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(matrixStats))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(ggrepel))
+suppressPackageStartupMessages(library(reshape2))
+suppressPackageStartupMessages(library(gridExtra))
+suppressPackageStartupMessages(library(pROC))
