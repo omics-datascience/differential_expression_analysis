@@ -1,7 +1,24 @@
-dataset	dataset_size_MB	atributo	time_real(s)	time_user(s)	time_sys(s)	memory_kb	time_DEA(s)
-brca_tcga	186	MENOPAUSE_STATUS	53.62	51.97	1.63	1892024	1.896
-brca_tcga	186	ETHNICITY	56.54	54.73	1.77	1890196	2.002
-brca_tcga	186	SEX	59.14	57.30	1.76	1893112	1.796
-acc_tcga	14	CLINICAL_STATUS_WITHIN_3_MTHS_SURGERY	4.91	4.69	0.21	275604	0.684
-acc_tcga	14	TUMOR_STATUS	3.81	3.62	0.19	276572	0.262
-acc_tcga	14	LATERALITY	3.87	3.69	0.18	276100	0.219
+Información del sistema:
+-----------------------
+
+RAM instalada: 10.86 GB
+
+Disco total en /:  219G
+
+Procesador:
+Architecture:                         x86_64
+CPU(s):                               8
+Model name:                           Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+Thread(s) per core:                   2
+Core(s) per socket:                   4
+Socket(s):                            1
+
+Resultados:
+-----------------------
+dataset	dataset_size_MB	atributo	time_real(s)	time_user(s)	time_sys(s)	memory_MB	time_DEA(s)
+brca_tcga	186	MENOPAUSE_STATUS	50.97	49.47	1.49	1847.26	1.714
+brca_tcga	186	ETHNICITY	53.08	51.26	1.76	1845.62	2.001
+brca_tcga	186	SEX	50.65	49.12	1.51	1848.81	1.318
+acc_tcga	14	CLINICAL_STATUS_WITHIN_3_MTHS_SURGERY	4.20	4.01	0.19	269.14	0.505
+acc_tcga	14	TUMOR_STATUS	3.91	3.70	0.21	269.72	0.283
+acc_tcga	14	LATERALITY	3.91	3.70	0.21	269.88	0.218

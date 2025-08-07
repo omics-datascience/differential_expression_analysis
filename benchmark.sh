@@ -25,8 +25,28 @@ output_table="${output_dir}/benchmark_resultados.tsv"
 
 mkdir -p "$logs_dir"
 
+
+echo "Información del sistema:" > "$output_table"
+echo "-----------------------" >> "$output_table"
+
+# RAM
+mem_mb=$(free -m | awk '/^Mem:/ {print $2}')
+mem_gb=$(echo "scale=2; $mem_mb / 1024" | bc)
+echo -e "\nRAM instalada: ${mem_gb} GB" >> "$output_table"
+
+# Disco total (en GB) en /
+disk_total=$(df -h --output=size / | tail -1)
+echo -e "\nDisco total en /: ${disk_total}" >> "$output_table"
+
+# Procesador
+cpu_info=$(lscpu | grep -E '^Model name|^CPU\(s\):|^Thread|^Core|^Socket|^Architecture')
+echo -e "\nProcesador:" >> "$output_table"
+echo -e "$cpu_info" >> "$output_table"
+
+echo -e "\nResultados:" >> "$output_table"
+echo "-----------------------" >> "$output_table"
 # encabezado de resultados
-echo -e "dataset\tdataset_size_MB\tatributo\ttime_real(s)\ttime_user(s)\ttime_sys(s)\tmemory_kb\ttime_DEA(s)" > "$output_table"
+echo -e "dataset\tdataset_size_MB\tatributo\ttime_real(s)\ttime_user(s)\ttime_sys(s)\tmemory_MB\ttime_DEA(s)" >> "$output_table"
 
 # Recorro cada dataset y atributo
 for i in "${!datasets[@]}"; do
@@ -60,6 +80,7 @@ for i in "${!datasets[@]}"; do
         time_user=$(echo "$last_line" | awk '{print $2}')
         time_sys=$(echo "$last_line" | awk '{print $3}')
         mem_kb=$(echo "$last_line" | awk '{print $4}')
+        mem_mb=$(echo "scale=2; $mem_kb / 1024" | bc)
     else
         # En caso de error al obtener las métricas, imprimir un mensaje de error y asignar "NA" a cada campo
         echo "Error al obtener metricas de tiempo para $dataset - $atributo. Ver log: $log_file"
@@ -75,7 +96,7 @@ for i in "${!datasets[@]}"; do
     tiempo_linea=$(grep "TIEMPO_LINEA_DIF_EXP:" "$log_file" | tail -n 1 | cut -d ':' -f2)
 
     # Agreg resultados parseados al archivo de resultados
-    echo -e "${dataset}\t${dataset_size}\t${atributo}\t${time_real}\t${time_user}\t${time_sys}\t${mem_kb}\t${tiempo_linea}" >> "$output_table"
+    echo -e "${dataset}\t${dataset_size}\t${atributo}\t${time_real}\t${time_user}\t${time_sys}\t${mem_mb}\t${tiempo_linea}" >> "$output_table"
 done
 echo ""
 
