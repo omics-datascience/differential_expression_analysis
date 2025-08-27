@@ -1,7 +1,12 @@
 lib/
 datasets/*
 output/*
+deseq2/venv
 data_simulator/output/*
 data_simulator/datasets/*
 limma_results*
 .vscode/settings.json
+pruebas-deseq2/CCLE_RNAseq_genes_counts_20180929.gct
+pruebas-deseq2/Cell_lines_annotations_20181226.txt
+pruebas-deseq2/example/CCLE_RNAseq_genes_counts_20180929.gct.gz
+pruebas-deseq2/example/Cell_lines_annotations_20181226.txt
