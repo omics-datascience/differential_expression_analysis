@@ -36,7 +36,7 @@ ui <- fluidPage(
 )
 
 server <- function(input, output, session) {
-  datasets_dir <- "datasets"
+  datasets_dir <- "../datasets"
   
     observe({
     carpetas <- list.dirs(datasets_dir, full.names = FALSE, recursive = FALSE)

@@ -6,8 +6,8 @@ import numpy as np
 
 # --- CONFIGURACIÓN ---
 # Reemplaza estos nombres con los de tus archivos
-archivo_r = '/home/mauri/Documentos/differential_expression_analysis/deseq2/example/results_r/resultados_completos_metastasis_vs_primary.csv'
-archivo_python = '/home/mauri/Documentos/differential_expression_analysis/deseq2/example/results_python/resultados_metastasis_vs_primary.csv'
+archivo_r = 'results_r/resultados_completos_metastasis_vs_primary.csv'
+archivo_python = 'results_python/resultados_metastasis_vs_primary.csv'
 umbral_padj = 0.01
 # ---------------------
 
@@ -102,3 +102,8 @@ plt.savefig('comparacion_log2fc.png', dpi=300)
 print(f"Gráfico de dispersión guardado como 'comparacion_log2fc.png'")
 print(f"Se compararon los `log2FoldChange` de {len(df_comparativo)} genes presentes en ambos archivos.")
 print(f"El coeficiente de correlación de Pearson es: {corr:.4f}")
+
+print("""La correlación de Pearson entre los `log2FoldChange` de los dos métodos nos indica qué tan alineados están los resultados en cuanto a magnitud y dirección de los cambios de expresión génica. 
+Usamos **`log2FoldChange`** porque representa directamente el cambio en la expresión de los genes, y es comparable entre diferentes métodos:
+Un valor cercano a **1** indica alta concordancia, mientras que un valor cercano a **0** sugiere poca relación.
+""")

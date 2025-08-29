@@ -1,14 +1,27 @@
+library(limma)
+library(edgeR)
+library(dplyr)
+library(matrixStats)
+library(ggplot2)
+library(ggrepel)
+library(reshape2)
+library(gridExtra)
+
 args <- commandArgs(trailingOnly = TRUE)
 dataset <- args[1]         # ej: "luad_tcga_pub"
 atributo <- args[2]        # ej: "SEX"
+if (length(args) < 2) {
+  stop("ERROR: Faltan argumentos. Se necesitan dos argumentos: 'dataset' y 'atributo'.", call. = FALSE)
+}
+
+if (!dir.exists("output")) {
+  dir.create("output")
+} 
 
 # Construir paths a partir del dataset
-clinical_path <- file.path("datasets", dataset, "data_clinical_patient.txt")
-sample_path <- file.path("datasets", dataset, "data_clinical_sample.txt")
-tpm_rnaseq_path <- file.path("datasets", dataset, "data_mrna_seq_v2_rsem.txt")
-
-# check_and_install_packages
-source("requirements/check_and_install_packages.r")
+clinical_path <- file.path("../datasets", dataset, "data_clinical_patient.txt")
+sample_path <- file.path("../datasets", dataset, "data_clinical_sample.txt")
+tpm_rnaseq_path <- file.path("../datasets", dataset, "data_mrna_seq_v2_rsem.txt")
 
 
 #### Clinical metadata processing and loading ####

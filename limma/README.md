@@ -2,13 +2,15 @@
 
 This project is based on differential expression analysis with the following characteristics:
 
-- It uses the [lung adenocarcinoma (LUAD)](https://www.cbioportal.org/study/summary?id=luad_tcga) dataset from The Cancer Genome Atlas Program (TCGA), obtained from cBioportal.
-- It uses the SEX variable to compare genes and obtain the differentially expressed ones.  
+- It can use any dataset available in cBioPortal by specifying its study ID (e.g., acc_tcga).
+- It can use any clinical variable from the selected dataset (e.g., SEX) to perform comparisons and identify differentially expressed genes.
 - Use the [Limma library](https://bioconductor-org.translate.goog/packages/release/bioc/html/limma.html?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc/) of R to perform the DEA.
 
 ## Requerimientos
 
-- R version 4.4.2
+- R version 4.5.1
+- Instar librerias:
+  - `Rscript requirements/check_and_install_packages.r`
 
 ## Descargar datasets
 
@@ -23,10 +25,12 @@ Rscript download_rnaseq_datasets.r
 Use the following command to perform differential expression analysis  
 
 ```R
-Rscript aed_limma_cbioportal_TMP.r
+Rscript aed_limma_cbioportal_TMP.r <dataset_id> <clinical_atrib>
 ```
 
-The script downloads all necessary libraries before running the analysis.  
+Example: `Rscript aed_limma_cbioportal_TMP.r acc_tcga SEX`
+
+Results can be found in **output** folder
 
 ## Operating details
 
@@ -61,13 +65,12 @@ Expression data: The dataset has RNASeq data expressed in Transcripts per millio
 
 - Create boxplots to compare expression distributions between samples.
 - Convert TPM values ​​to a log2 scale (TPM + 1) to stabilize variance.
-- Generate histograms of the expression distribution before and after the log2 transformation.
-- Save the plots to a plots.pdf file.
-- Create a design matrix with the variable SEX as a factor.
+- Save the plots to a pdf and png file.
+- Create a design matrix with the clinical variable as a factor.
 - Calculate the variance of each gene in the log-transformed data.
 - Eliminate genes with a variance less than the threshold (1e-4 by default).
 - Calculate the mean expression of each gene, set a percentile-based threshold (15% by default), and then eliminate genes with mean expression below this threshold.
-- Use the limma package to identify genes differentially expressed by sex (SEX), using the dataset modified with the two points above.
+- Use the limma package to identify genes differentially expressed by the clinical variable, using the dataset modified with the two points above.
 - Fit a linear model (lmFit) and apply the eBayes adjustment.
 - Extracts the results with corrected p-values ​​(Benjamini-Hochberg correction).
 - Returns the table of differentially expressed genes.
@@ -77,3 +80,15 @@ Expression data: The dataset has RNASeq data expressed in Transcripts per millio
 - Extracts the 50 genes with the lowest adjusted p-values ​​(the most significant).
 - Generates a "Volcano Plot" to visualize the relationship between logFC and -log10 (adjusted p-value). Distinguishes significant genes (in red) from non-significant ones (in black).
 - Saves the results in two CSV files (one with all results and one with the top 50)
+
+## Dataset Analysis and DEA
+
+By running the app.R script as shown below, you can access a web interface that allows you to analyze the clinical attributes of each dataset in cbioportal with RNAseq data.
+
+```R
+    R script app.R
+```
+
+Go to [http://127.0.0.1:8077](http://127.0.0.1:8077)
+
+In the same interface, you can select a dataset and a clinical attribute to run the differential expression analysis with limma. The tool also allows you to generate an HTML report with the best results and a volcano plot.
