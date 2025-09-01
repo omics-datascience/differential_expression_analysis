@@ -35,8 +35,9 @@ def main():
             group2=GRUPO2
         )
 
-        # 2. Análisis de Expresión Diferencial (usando la función importada)
+        # 2. Análisis de Expresión Diferencial
         print("\n--- Paso 2: Ejecutando análisis con PyDESeq2 ---")
+        
         dds, results_df = run_deseq_analysis(
             counts=count_matrix,
             metadata=metadata,
@@ -53,7 +54,7 @@ def main():
 
     except (FileNotFoundError, ValueError) as e:
         print(f"\nCRITICAL - {e}")
-        return  # Termina la ejecución si hay un error
+        return 
 
     print(f"\nAnálisis completado! Revisa los resultados en la carpeta: '{OUTPUT_DIR}'")
 

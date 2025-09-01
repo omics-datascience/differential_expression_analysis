@@ -34,20 +34,42 @@ def prepare_data(gct_path, metadata_path, group_col, group1, group2):
 
     # Carga y filtrado de la matriz de conteos
     try:
-        counts_df = pd.read_csv(gct_path, sep='\t', skiprows=2, index_col=0)
+        if gct_path.endswith("gct") or gct_path.endswith("gct.gz"):
+            counts_df = pd.read_csv(gct_path, sep='\t', skiprows=2, index_col=0)
+        elif gct_path.endswith("csv") or gct_path.endswith("csv.gz"):
+            counts_df = pd.read_csv(gct_path, index_col=0)
+        elif gct_path.endswith("tsv") or gct_path.endswith("tsv.gz"):
+            counts_df = pd.read_csv(gct_path, sep='\t', index_col=0)
+        elif gct_path.endswith("txt") or gct_path.endswith("txt.gz"):
+            counts_df = pd.read_csv(gct_path, sep='\t', index_col=0)
+        else:
+            raise ValueError("ERROR: El archivo de conteos debe estar en formato .gct, .csv, .tsv o .txt (o sus versiones comprimidas).")
+        # index_col=0 indica que la primera columna del archivo (índice 0) debe usarse como 
+        # el índice de la tabla (DataFrame). En este contexto, esta columna contiene los 
+        # nombres de los genes
     except FileNotFoundError:
         raise FileNotFoundError(f"ERROR: No se encontró el archivo GCT en '{gct_path}'")
 
     # Limpiar y asegurar que la matriz es numérica
+    # Elimina la columna llamada "Description" del DataFrame. Esta columna contiene 
+    # descripciones de los genes que no son necesarias para el análisis numérico
     count_matrix = counts_df.drop(columns=['Description']).apply(pd.to_numeric)
 
     # Sincronizar muestras entre la matriz de conteos y los metadatos
+    # Encuentra los nombres de las muestras que están presentes en ambos DataFrames (en las
+    # columnas de count_matrix y en el índice de metadata_filtered). Esto es crucial para 
+    # asegurar que solo se analicen las muestras que tienen tanto datos de conteo como 
+    # información descriptiva (grupos).
     common_samples = count_matrix.columns.intersection(metadata_filtered.index)
 
     count_matrix_filtered = count_matrix[common_samples]
     metadata_final = metadata_filtered.loc[common_samples]
 
     # Asegurar que el orden es idéntico (requisito de PyDESeq2)
+    # Reordena las filas del DataFrame de metadatos (metadata_final) para que sigan 
+    # exactamente el mismo orden que las columnas del DataFrame de conteos (count_matrix_filtered). 
+    # Algunas herramientas de análisis, como PyDESeq2, requieren que este orden sea idéntico
+    # para funcionar correctamente.
     metadata_final = metadata_final.reindex(count_matrix_filtered.columns)
 
     # Convertir la columna de grupo a categórica y establecer el nivel de referencia (control)

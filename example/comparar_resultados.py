@@ -4,14 +4,11 @@ import seaborn as sns
 from scipy.stats import pearsonr
 import numpy as np
 
-# --- CONFIGURACIÓN ---
-# Reemplaza estos nombres con los de tus archivos
 archivo_r = 'results_r/resultados_completos_metastasis_vs_primary.csv'
 archivo_python = 'results_python/resultados_metastasis_vs_primary.csv'
 umbral_padj = 0.01
-# ---------------------
 
-# 1. Cargar los datos de los archivos CSV
+# Cargar los datos de los archivos CSV
 try:
     df_r = pd.read_csv(archivo_r)
     df_py = pd.read_csv(archivo_python)
@@ -43,20 +40,20 @@ porcentaje_en_py = (len(genes_comunes) / len(genes_r_set)) * 100 if len(genes_r_
 print(f"Umbral de p-valor ajustado: {umbral_padj}")
 print(f"Total de genes significativos en R: {len(genes_r_set)}")
 print(f"Total de genes significativos en Python: {len(genes_py_set)}")
-print("-" * 35)
+print("-" * 38)
 print(f"Genes significativos en AMBOS análisis: {len(genes_comunes)} ")
 print(f"Genes significativos SÓLO en R: {len(genes_solo_r)}")
 print(f"Genes significativos SÓLO en Python: {len(genes_solo_py)}")
-print("-" * 35)
+print("-" * 38)
 print("Métricas de Superposición:")
 print(f"{porcentaje_en_py:.2f}% de los genes de R también fueron encontrados por Python.")
 print(f"{porcentaje_en_r:.2f}% de los genes de Python también fueron encontrados por R.")
-print("-" * 35)
+print("-" * 38)
 
-# print(f"Nombres de genes SÓLO en R: {list(genes_solo_r)}")
-# print(f"Nombres de genes SÓLO en Python: {list(genes_solo_py)}")
+print(f"Nombres de genes SÓLO en R: {list(genes_solo_r)}")
+print(f"Nombres de genes SÓLO en Python: {list(genes_solo_py)}")
 
-# 2. Crear el gráfico de dispersión comparativo
+# Crear el gráfico de dispersión comparativo
 print("\n--- Creando gráfico de dispersión comparativo ---")
 # Unir los dos dataframes usando la columna 'Name'
 df_comparativo = pd.merge(
@@ -99,7 +96,7 @@ ax.text(0.05, 0.95, f'Correlación de Pearson (todos los genes): {corr:.4f}',
 plt.savefig('comparacion_log2fc.png', dpi=300)
 
 # Imprimir resumen final en la consola
-print(f"Gráfico de dispersión guardado como 'comparacion_log2fc.png'")
+print("Gráfico de dispersión guardado como 'comparacion_log2fc.png'")
 print(f"Se compararon los `log2FoldChange` de {len(df_comparativo)} genes presentes en ambos archivos.")
 print(f"El coeficiente de correlación de Pearson es: {corr:.4f}")
 
