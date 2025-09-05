@@ -30,7 +30,8 @@ ejecutar_analisis_deseq <- function(matriz_conteos, metadatos, col_grupo, nombre
   # Obtener los resultados del análisis.
   # El contraste define la comparación: `c(columna, grupo_a_comparar, grupo_base)`.
   # Se calculará el log2FoldChange como (grupo2 / grupo1).
-  res <- DESeq2::results(dds, contrast = c(col_grupo, nombre_grupo2, nombre_grupo1))
+
+  res <- DESeq2::results(dds, contrast = c(col_grupo, gsub(":", "_", nombre_grupo2), gsub(":", "_", nombre_grupo1)))
 
   # Ordenar la tabla de resultados por el p-valor ajustado (padj) para ver los genes más significativos primero.
   res_ordered <- res[order(res$padj),]

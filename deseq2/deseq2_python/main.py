@@ -7,14 +7,14 @@ from analisis_dge import run_deseq_analysis
 
 # --- PARÁMETROS DE CONFIGURACIÓN ---
 # Rutas a los archivos de entrada y directorio de salida
-GCT_FILE_GZ = "../example/CCLE_RNAseq_genes_counts_20180929.gct.gz"
-METADATA_FILE = "../example/Cell_lines_annotations_20181226.txt"
-OUTPUT_DIR = "../example/results_python"
+GCT_FILE_GZ = "/home/mauri/Documentos/differential_expression_analysis/example/datasets/brain_cptac_gdc/data_mrna_seq_read_counts.txt"
+METADATA_FILE = "/home/mauri/Documentos/differential_expression_analysis/example/datasets/brain_cptac_gdc/metadata.tsv"
+OUTPUT_DIR = "/home/mauri/Documentos/differential_expression_analysis/example/results_python/brain_cptac_gdc"
 
 # Parámetros para la comparación de grupos
-COLUMNA_DE_GRUPO = "Pathology"  # Nombre de la columna en 'METADATA_FILE' que define los grupos.
-GRUPO1 = "primary"              # Nombre del primer grupo (usado como control/referencia).
-GRUPO2 = "metastasis"           # Nombre del segundo grupo a comparar.
+COLUMNA_DE_GRUPO = "SEX"  # Nombre de la columna en 'METADATA_FILE' que define los grupos.
+GRUPO1 = "Male"          # Nombre del primer grupo (usado como control/referencia).
+GRUPO2 = "Female"           # Nombre del segundo grupo a comparar.
 
 
 def main():
@@ -37,7 +37,7 @@ def main():
 
         # 2. Análisis de Expresión Diferencial
         print("\n--- Paso 2: Ejecutando análisis con PyDESeq2 ---")
-        
+
         dds, results_df = run_deseq_analysis(
             counts=count_matrix,
             metadata=metadata,

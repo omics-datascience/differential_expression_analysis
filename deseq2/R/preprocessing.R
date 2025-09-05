@@ -13,7 +13,6 @@
 #'         y 'metadatos' (el data frame de metadatos filtrado y ordenado).
 
 preparar_datos <- function(gct_path, metadata_path, col_grupo, nombre_grupo1, nombre_grupo2) {
-
   # --- Carga y filtrado de metadatos ---
 
   # Cargar el archivo completo de metadatos. Se asume que la primera columna contiene los IDs de muestra.
@@ -42,15 +41,32 @@ preparar_datos <- function(gct_path, metadata_path, col_grupo, nombre_grupo1, no
 
   # --- Carga y filtrado de la matriz de conteos ---
 
-  # Cargar el archivo GCT de conteos. Se saltan las 2 primeras líneas de metadatos del formato.
-  counts_tibble <- readr::read_tsv(gct_path, skip = 2, show_col_types = FALSE)
-
-  # Convertir el tibble a una matriz numérica.
-  # DESeq2 requiere una matriz con genes en filas y muestras en columnas.
-  count_matrix <- counts_tibble %>%
-    dplyr::select(-Description) %>%                # La columna 'Description' no es necesaria.
-    tibble::column_to_rownames("Name") %>%         # La columna 'Name' se convierte en los nombres de las filas (genes).
-    as.matrix()
+  # Cargar el archivo, detectando el tipo de archivo por su extensión
+  if (endsWith(gct_path, ".gct")) {
+    # Si es un archivo GCT, saltamos las 2 primeras líneas.
+    counts_tibble <- readr::read_tsv(gct_path, skip = 2, show_col_types = FALSE)
+    
+    # Procesamos el GCT: eliminamos 'Description' y usamos 'Name' para los nombres de filas.
+    count_matrix <- counts_tibble %>%
+      dplyr::select(-Description) %>%
+      tibble::column_to_rownames("Name") %>%
+      as.matrix()
+    
+  } else if (endsWith(gct_path, ".tsv") | endsWith(gct_path, ".txt")) {
+    # Si es un archivo TSV o TXT, lo leemos directamente sin saltar líneas.
+    counts_tibble <- readr::read_tsv(gct_path, show_col_types = FALSE)
+    
+    # Procesamos el TSV: la primera columna se usa para los nombres de filas, no hay 'Description'.
+    # Se detecta el nombre de la primera columna para usarla en column_to_rownames.
+    first_col_name <- colnames(counts_tibble)[1]
+    
+    count_matrix <- counts_tibble %>%
+      tibble::column_to_rownames(first_col_name) %>%
+      as.matrix()
+      
+  } else {
+    stop("El formato de archivo no es soportado. Por favor, use .gct, .tsv, o .txt.")
+  }
 
   # Filtrar la matriz de conteos para quedarnos solo con las columnas (muestras)
   # que están presentes en nuestros metadatos filtrados.
@@ -63,11 +79,11 @@ preparar_datos <- function(gct_path, metadata_path, col_grupo, nombre_grupo1, no
   metadata_final <- metadata_filtrado[colnames(count_matrix_filtrada), ]
 
   # Convierte la columna a factor
+  metadata_final[[col_grupo]] <- gsub(":", "_", metadata_final[[col_grupo]])
   metadata_final[[col_grupo]] <- factor(metadata_final[[col_grupo]])
-
   # Establece explícitamente cuál es el grupo de referencia (el control)
   # 'grupo1' debería ser tu grupo control o base.
-  metadata_final[[col_grupo]] <- relevel(metadata_final[[col_grupo]], ref = grupo1)
+  metadata_final[[col_grupo]] <- relevel(metadata_final[[col_grupo]], ref = gsub(":", "_", grupo1))
 
   # Devolver los datos listos para el análisis
   return(list(matriz_conteos = count_matrix_filtrada, metadatos = metadata_final))

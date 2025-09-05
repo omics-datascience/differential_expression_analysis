@@ -16,15 +16,15 @@ source("preprocessing.R")
 source("analysis_dea.R")
 
 # Rutas a los archivos de entrada y directorio de salida
-gct_file_gz <- "../example/CCLE_RNAseq_genes_counts_20180929.gct.gz"
-metadata_file <- "../example/Cell_lines_annotations_20181226.txt"
-output_dir <- "../example/results_r"
+gct_file_gz <- "../../example/datasets/acc_tcga_gdc/data_mrna_seq_read_counts.txt"
+metadata_file <- "../../example/datasets/acc_tcga_gdc/metadata.tsv"
+output_dir <- "../../example/results_r/acc_tcga_gdc"
 
 # Parámetros para la comparación de grupos
-columna_de_grupo <- "Pathology"  # Nombre de la columna en 'metadata_file' que define los grupos.
-grupo1 <- "primary"              # Nombre del primer grupo (usado como control en la comparación).
-grupo2 <- "metastasis"           # Nombre del segundo grupo.
-
+columna_de_grupo <- "OS_STATUS"  # Nombre de la columna en 'metadata_file' que define los grupos.
+grupo1 <- "0:LIVING"              # Nombre del primer grupo (usado como control en la comparación).
+grupo2 <- "1:DECEASED"           # Nombre del segundo grupo.
+  
 
 # Crear el directorio de salida si no existe
 if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)

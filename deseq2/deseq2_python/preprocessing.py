@@ -33,14 +33,19 @@ def prepare_data(gct_path, metadata_path, group_col, group1, group2):
           f"{(metadata_filtered[group_col] == group2).sum()} para '{group2}'.")
 
     # Carga y filtrado de la matriz de conteos
+    matrix_type = None
     try:
         if gct_path.endswith("gct") or gct_path.endswith("gct.gz"):
+            matrix_type = "GCT"
             counts_df = pd.read_csv(gct_path, sep='\t', skiprows=2, index_col=0)
         elif gct_path.endswith("csv") or gct_path.endswith("csv.gz"):
+            matrix_type = "CSV"
             counts_df = pd.read_csv(gct_path, index_col=0)
         elif gct_path.endswith("tsv") or gct_path.endswith("tsv.gz"):
+            matrix_type = "TSV"
             counts_df = pd.read_csv(gct_path, sep='\t', index_col=0)
         elif gct_path.endswith("txt") or gct_path.endswith("txt.gz"):
+            matrix_type = "TSV"
             counts_df = pd.read_csv(gct_path, sep='\t', index_col=0)
         else:
             raise ValueError("ERROR: El archivo de conteos debe estar en formato .gct, .csv, .tsv o .txt (o sus versiones comprimidas).")
@@ -53,7 +58,10 @@ def prepare_data(gct_path, metadata_path, group_col, group1, group2):
     # Limpiar y asegurar que la matriz es numérica
     # Elimina la columna llamada "Description" del DataFrame. Esta columna contiene 
     # descripciones de los genes que no son necesarias para el análisis numérico
-    count_matrix = counts_df.drop(columns=['Description']).apply(pd.to_numeric)
+    if matrix_type == "GCT" and 'Description' in counts_df.columns:
+        count_matrix = counts_df.drop(columns=['Description']).apply(pd.to_numeric)
+    else:
+        count_matrix = counts_df.apply(pd.to_numeric)
 
     # Sincronizar muestras entre la matriz de conteos y los metadatos
     # Encuentra los nombres de las muestras que están presentes en ambos DataFrames (en las
