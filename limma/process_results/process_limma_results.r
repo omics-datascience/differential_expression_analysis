@@ -25,7 +25,7 @@ get_top_50_by_pvalue <- function(ordered_results) {
 
 # Function to generate volcano plot
 create_volcano_plot <- function(results, p_value_threshold = 0.05, logFC_threshold = 1, title = "Volcano Plot") {
-  # Filter significant genes
+  # Get significant genes that meet the thresholds passed as parameters
   significant_genes <- subset(results, adj.P.Val < p_value_threshold & abs(logFC) > logFC_threshold)
   
   # Create volcano plot
